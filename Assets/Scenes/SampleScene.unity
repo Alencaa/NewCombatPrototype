@@ -400,7 +400,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8d6414dba5a89428e3f9d80d04af40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackHitBox: {fileID: 528527815}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +532,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.39, y: -0.92, z: -10}
+  m_LocalPosition: {x: -0.18, y: -0.92, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1180,7 +1179,7 @@ Transform:
   m_GameObject: {fileID: 747718590}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.39, y: -0.92, z: -10}
+  m_LocalPosition: {x: -0.18, y: -0.92, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2464,17 +2463,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 58422096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1842219135 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4447987545515304729, guid: 8b5f6f3301e4b4a4e916b020320c3054, type: 3}
-  m_PrefabInstance: {fileID: 1653852024}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708916561}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c864de906f3ca345b29a813bd4c88c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1842219138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2487,6 +2475,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20503e87549a6454c84f34916f44826f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  attackDirection: 0
+  isDealingDamage: 0
+  isAttackActive: 0
+  ownerStats: {fileID: 0}
+  intent: 0
 --- !u!1 &1933057167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,7 +2602,7 @@ Transform:
   m_GameObject: {fileID: 1963247448}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.39, y: -0.92, z: 0}
+  m_LocalPosition: {x: -0.18, y: -0.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2658,7 +2652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2104803437}
   playerMovement: {fileID: 1963247450}
-  attackHitbox: {fileID: 1842219135}
+  playerAttackHitbox: {fileID: 0}
   verticalBias: 1.2
   minDragDistance: 50
   attackDistance: 0.5
@@ -2839,7 +2833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8d6414dba5a89428e3f9d80d04af40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackHitBox: {fileID: 1842219135}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
