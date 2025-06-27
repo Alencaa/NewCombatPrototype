@@ -1,0 +1,2908 @@
+fileFormatVersion: 2
+guid: ba36241feceb5334cb2783141962e4a3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6921689226967322207
+    second: PC Computer - CrossCode - Hit Effects_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 967
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a1f6fc125831ff90800000000000000
+      internalID: -6921689226967322207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 967
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb09887d76e6004488a6c9573688f41
+      internalID: 1982915288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 967
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc31a21a801b5ef42a29c640ac640245
+      internalID: 823623855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_3
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 967
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35cf36a382cf33e49b53a9d9faf1114b
+      internalID: -559519859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 967
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db581e5fd542bf94293941d640939d08
+      internalID: 995577258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_5
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 967
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75532a884fe4f74c9e333176e8c0aed
+      internalID: -1610647765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_6
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 967
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137f88823b9f09340a79a021fe110880
+      internalID: -1362726735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_7
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 967
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd87be8ac4c5ead4cbf94cce54e0e204
+      internalID: -1524348183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 903
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3700fad9bf5c8045848ae08dc82031b
+      internalID: -610004119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_9
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 903
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2e76a9327028643ac7d4c1e978f222
+      internalID: 1977731816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_10
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 903
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ded5d251501e674690762f296759803
+      internalID: 810025656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_11
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 903
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c248ed0afb90c439512cce7b19f390
+      internalID: 1982852203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_12
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 903
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04876232d3afa24f9493a351dba557a
+      internalID: -951232117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_13
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 903
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb87147a2d0fb84e8f28ed8f9b54742
+      internalID: -410713557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_14
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 903
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e99dc6598817ca14cbdf138fbe92e175
+      internalID: 263970281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_15
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 903
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385f650e21d22984b88682ae3f7fda6f
+      internalID: 1085394049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_16
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 839
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffc63af10d3e0747864f70337f48a9f
+      internalID: -1067681084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_17
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 839
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f0350c5954aec4099f37819f965f32
+      internalID: 904866181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_18
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 839
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc55506481d41e418c8eaf78f35b495
+      internalID: -1081281692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_19
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 839
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b762061230c77b14cb27ca8808ed78c2
+      internalID: -547010064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_20
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 839
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f14130b1693f530428a67f4d813a704e
+      internalID: 1917023871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_21
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 839
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aadb1f4ea903474fbeeca2a41237309
+      internalID: 1043479320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_22
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 839
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf36ee444d182446b132d205b100035
+      internalID: -1729685552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_23
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 839
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd0b421d1547ee489c3de617007baa4
+      internalID: -1962767671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 775
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7eb328798bc1574eb5fce4094c66a54
+      internalID: -132412599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_25
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 775
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7ae6965ff95b6429c4e9f70b9f15b4
+      internalID: -884595010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_26
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 775
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3980631464561241b3613acd300da5f
+      internalID: -606121813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_27
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 775
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a360cd21972ae40b175dd8ab8bcc7b
+      internalID: 18568920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_28
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 775
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50324426633f8c54eb3529d379386d95
+      internalID: -560765914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_29
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 775
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c4d9e8aadd32049a5c5756861e72df
+      internalID: 1550472630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_30
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 775
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ab725138a41d041b1f1931020e2a94
+      internalID: -1658676473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_31
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 775
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81974892f53cb274f98a54148b29ff73
+      internalID: -200814228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_32
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 711
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fccc4047b8edb764c949a564685e768e
+      internalID: 2136054114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_33
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 711
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402637a501a410943821a5f4d2dd1bd9
+      internalID: 94841030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_34
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 711
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317485c9300c1f24eb11d93e8ad0335e
+      internalID: -163966918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_35
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 711
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d59822ba5772594fac837eb02670a38
+      internalID: -1219307723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_36
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 711
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ef09458d450604db1d3533c24e43f7
+      internalID: 823972560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_37
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 711
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863a0e249764b2c45a5bc662bb08ce4d
+      internalID: 374869187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_38
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 711
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c94041d95a545d14984ebb3c0d590c2c
+      internalID: -650559140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_39
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 711
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94744dd6233c3bb41abf779e5e7b5cd2
+      internalID: -1524495145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_40
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 647
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89492696187d15f4ab95e7b6c6506e39
+      internalID: 1125690303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_41
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 647
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59fab2275fafb714a8b0da42b86f009f
+      internalID: 1740256781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_42
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 647
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ef1a3d708302a478499f9f6cee521f
+      internalID: 1897574983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_43
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 647
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2125970e97c96f449a5d6e5e112f1a1
+      internalID: 1877620427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_44
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 647
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29949bf147f266843bcb146784f7e8c8
+      internalID: 88062841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_45
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 647
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26e28b425f2ae841b4e831b0638ac24
+      internalID: 181868833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_46
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 647
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd69d1a478755cb4092ff8da1b794e15
+      internalID: -656073598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_47
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 647
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9317381b316299947ade0a308c57339d
+      internalID: -1318133811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_48
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 583
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b8ff0bf5aba2d4391ee8991f1864f9
+      internalID: 2084390682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_49
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 583
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2abf90f19422be84d9cb851bb9f8e3e7
+      internalID: 141629657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_50
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 583
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a33e929d73a4c747a24d69c8d63e828
+      internalID: -1858521518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_51
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 583
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b5cf2a7fbb0e04a875964fb427d196
+      internalID: -1167389114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_52
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 583
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7612df80a0864a0418fa87fd1bfe1e5e
+      internalID: 332256381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_53
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 583
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f24f95c619491419f1f2de7a96f4c1
+      internalID: -1690795997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_54
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 583
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b490f6d93d692949bb148d469f2dfbf
+      internalID: 1271648214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_55
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 519
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d270805b3355924791d4e895059296c
+      internalID: 771014410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_56
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 519
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae605e3e21a770745bfd4217b826b719
+      internalID: -39007798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_57
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 519
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16646abf2d12ae49a7a6b9a5e95da7a
+      internalID: 1292655726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_58
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 519
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d27dabb2861fe14ebaccee66aa84d96
+      internalID: -2078803998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_59
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 519
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5826f8ea9c2b25f409e319504d9ac997
+      internalID: -1534589492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_60
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 519
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b289c1f35c85e4c87b379b0fca4019
+      internalID: -1596310655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_61
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 519
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463c47dd46e7437419c37d8355d50f6b
+      internalID: -404887176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_62
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 519
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a92b7c725943c0841afed4dba22cb0ea
+      internalID: -2042936488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_63
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 455
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46eb4c1214699248bb9d1ed431773f4
+      internalID: 869111048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_64
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 455
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e654b460d039abd40b0f19b0f762afec
+      internalID: -1784910628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_65
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 455
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce77fff2925e544885974055d71c678
+      internalID: -1124844185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_66
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 455
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c871ae9a082f17e4eb93e37c6f9f47f2
+      internalID: -1494440740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_67
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 455
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e32e62decb21c24d974da520022123b
+      internalID: -459317240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_68
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 455
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec0761f72746834597cde00de9e02ba
+      internalID: -1946856438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_69
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 455
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1a721fc2042e144aea50b032fd9966
+      internalID: 1377033597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_70
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 455
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef27f14fd441f64796e70cfe0f7fe20
+      internalID: -814364682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_71
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bc40fe54d42f1489cac9ada5fda10b
+      internalID: 1959846805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_72
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31fb8b804156154f8494c1aa9a7283b
+      internalID: -480331813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_73
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccc4243d5017ef40bc397ca585073de
+      internalID: 1230768688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_74
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4408209dd915b2e4bbe162ff15687ae4
+      internalID: 881705543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_75
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe487cafe981924f932f3acd8056c2f
+      internalID: 1756488751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_76
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6881ef68d47498042b700c17d703e3c7
+      internalID: 1535816556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_77
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9aab6018d3e774e93a08f9f195b715
+      internalID: 498531981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_78
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef6e1c6b5fc71c4e8d915bbf369cfb0
+      internalID: 2024895265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_79
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 327
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d01998026db100488885d8f873de7f4
+      internalID: 81122287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_80
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 327
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 544ed40f894a208469883dbe807f9ae8
+      internalID: -121172929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_81
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 327
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dde0e60dd80bb4e4f8dbfab6fbe43d41
+      internalID: 1764745488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_82
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 327
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63270ebde87f8846830eff5cb85871a
+      internalID: -1680633639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_83
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 327
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0297fa2659e35964eb72d41832f6408e
+      internalID: -1177216544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_84
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 327
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33eba44a406a7d41a1620507fe6ea17
+      internalID: -1022741181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_85
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 327
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a38dad2febcb70439c3f92893205373
+      internalID: 1391648870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_86
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 327
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac7e904327a57b47a185f78b497f6e1
+      internalID: -1202868334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_87
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 263
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbd376136610774784e6fbce0772e4d
+      internalID: -108945625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_88
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 263
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc8df365c421354884ff7e6bffde5f1
+      internalID: 1169561097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_89
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 263
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4004398adcaf93e4482525d4ea5956fe
+      internalID: -1609551869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_90
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4e90d8cedd8d04089c73570aa74840
+      internalID: 343709911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_91
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67485964edf50f44a6ec450a433e6e4
+      internalID: -1981285245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_92
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e15f82aa3eea64aad3b3d77fe1e486
+      internalID: 2140208078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_93
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113f0f76c2322b141b03e6283d5153da
+      internalID: -1089160241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_94
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b68b2d309877d4e9e4e6c559cd73ce
+      internalID: -1613946514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_95
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e87485fb8aea4d740aa1e7ff93c4bceb
+      internalID: 2020945239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_96
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06588dcc475dae4684c52a1027d68a2
+      internalID: -813104563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_97
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3908fe2f27fdba946a3c1d2eb55fda61
+      internalID: -710713760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_98
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 135
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec2817fc73028f9479a2edd30590d9c0
+      internalID: -432972862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_99
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 135
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a60a36ff449c954a815f977fd6543a6
+      internalID: -1010518070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_100
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 135
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afe4249d8c2d2a4bb01570926d1adfb
+      internalID: 373308349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_101
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 135
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c058e7e62e4b5064ea5527c08e3ffee2
+      internalID: -494364992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_102
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 135
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587142d5ed3ec534ab3c12580f970caf
+      internalID: 1976252261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_103
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 135
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614a5f276d9508244b77b5999874a213
+      internalID: -935083931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_104
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 135
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0b676ec8fc13d42bf754a5d8da0f1a
+      internalID: -1071306719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_105
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 135
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0acefc4c3e1c9f540b34efafa84fd703
+      internalID: -238006815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_106
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 71
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44bc1c711baad645be1fa92c4b53afe
+      internalID: 582895840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_107
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 71
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 745229e2151e5ec42904f4a32645c0dd
+      internalID: -1935069070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_108
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 71
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cf3acea79a5cc44b8abd6260f93e579
+      internalID: 566050997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_109
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 71
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8515d54a948af1a479f9513a2ce43946
+      internalID: -1247617632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_110
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 71
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac353402143add4a9f3abc2d2b60755
+      internalID: -1882888990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_111
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 71
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79f16ccd185c9ce40920730a947fb72d
+      internalID: 55833027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_112
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 71
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2bc49eca704624eb61a838b5b7f1d0
+      internalID: -434404431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_113
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 71
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48a503a383a7dc449f82c9461169068
+      internalID: 2050710327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_114
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 7
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a28db5f93e6dc6f4aa0a01836b1ddb8d
+      internalID: -157733491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_115
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 7
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c38cdc966b33484bbfc2662655c5905
+      internalID: 1634220039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_116
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 7
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0257d63498cdac946bd421a4c9aedcf8
+      internalID: -19589925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_117
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 7
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d841aea2a446ac41834724147cc6862
+      internalID: 222351383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_118
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 7
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b192197bc1c72d4d9947c8ad9747793
+      internalID: -1488230172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - CrossCode - Hit Effects_119
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 7
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fb687ee28c12e4448b47422b6f863ac
+      internalID: 301479773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f46eaf1ceec512b45a11c7796494202e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":2.0,"y":1.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      PC Computer - CrossCode - Hit Effects_0: -6921689226967322207
+      PC Computer - CrossCode - Hit Effects_1: 1982915288
+      PC Computer - CrossCode - Hit Effects_10: 810025656
+      PC Computer - CrossCode - Hit Effects_100: 373308349
+      PC Computer - CrossCode - Hit Effects_101: -494364992
+      PC Computer - CrossCode - Hit Effects_102: 1976252261
+      PC Computer - CrossCode - Hit Effects_103: -935083931
+      PC Computer - CrossCode - Hit Effects_104: -1071306719
+      PC Computer - CrossCode - Hit Effects_105: -238006815
+      PC Computer - CrossCode - Hit Effects_106: 582895840
+      PC Computer - CrossCode - Hit Effects_107: -1935069070
+      PC Computer - CrossCode - Hit Effects_108: 566050997
+      PC Computer - CrossCode - Hit Effects_109: -1247617632
+      PC Computer - CrossCode - Hit Effects_11: 1982852203
+      PC Computer - CrossCode - Hit Effects_110: -1882888990
+      PC Computer - CrossCode - Hit Effects_111: 55833027
+      PC Computer - CrossCode - Hit Effects_112: -434404431
+      PC Computer - CrossCode - Hit Effects_113: 2050710327
+      PC Computer - CrossCode - Hit Effects_114: -157733491
+      PC Computer - CrossCode - Hit Effects_115: 1634220039
+      PC Computer - CrossCode - Hit Effects_116: -19589925
+      PC Computer - CrossCode - Hit Effects_117: 222351383
+      PC Computer - CrossCode - Hit Effects_118: -1488230172
+      PC Computer - CrossCode - Hit Effects_119: 301479773
+      PC Computer - CrossCode - Hit Effects_12: -951232117
+      PC Computer - CrossCode - Hit Effects_13: -410713557
+      PC Computer - CrossCode - Hit Effects_14: 263970281
+      PC Computer - CrossCode - Hit Effects_15: 1085394049
+      PC Computer - CrossCode - Hit Effects_16: -1067681084
+      PC Computer - CrossCode - Hit Effects_17: 904866181
+      PC Computer - CrossCode - Hit Effects_18: -1081281692
+      PC Computer - CrossCode - Hit Effects_19: -547010064
+      PC Computer - CrossCode - Hit Effects_2: 823623855
+      PC Computer - CrossCode - Hit Effects_20: 1917023871
+      PC Computer - CrossCode - Hit Effects_21: 1043479320
+      PC Computer - CrossCode - Hit Effects_22: -1729685552
+      PC Computer - CrossCode - Hit Effects_23: -1962767671
+      PC Computer - CrossCode - Hit Effects_24: -132412599
+      PC Computer - CrossCode - Hit Effects_25: -884595010
+      PC Computer - CrossCode - Hit Effects_26: -606121813
+      PC Computer - CrossCode - Hit Effects_27: 18568920
+      PC Computer - CrossCode - Hit Effects_28: -560765914
+      PC Computer - CrossCode - Hit Effects_29: 1550472630
+      PC Computer - CrossCode - Hit Effects_3: -559519859
+      PC Computer - CrossCode - Hit Effects_30: -1658676473
+      PC Computer - CrossCode - Hit Effects_31: -200814228
+      PC Computer - CrossCode - Hit Effects_32: 2136054114
+      PC Computer - CrossCode - Hit Effects_33: 94841030
+      PC Computer - CrossCode - Hit Effects_34: -163966918
+      PC Computer - CrossCode - Hit Effects_35: -1219307723
+      PC Computer - CrossCode - Hit Effects_36: 823972560
+      PC Computer - CrossCode - Hit Effects_37: 374869187
+      PC Computer - CrossCode - Hit Effects_38: -650559140
+      PC Computer - CrossCode - Hit Effects_39: -1524495145
+      PC Computer - CrossCode - Hit Effects_4: 995577258
+      PC Computer - CrossCode - Hit Effects_40: 1125690303
+      PC Computer - CrossCode - Hit Effects_41: 1740256781
+      PC Computer - CrossCode - Hit Effects_42: 1897574983
+      PC Computer - CrossCode - Hit Effects_43: 1877620427
+      PC Computer - CrossCode - Hit Effects_44: 88062841
+      PC Computer - CrossCode - Hit Effects_45: 181868833
+      PC Computer - CrossCode - Hit Effects_46: -656073598
+      PC Computer - CrossCode - Hit Effects_47: -1318133811
+      PC Computer - CrossCode - Hit Effects_48: 2084390682
+      PC Computer - CrossCode - Hit Effects_49: 141629657
+      PC Computer - CrossCode - Hit Effects_5: -1610647765
+      PC Computer - CrossCode - Hit Effects_50: -1858521518
+      PC Computer - CrossCode - Hit Effects_51: -1167389114
+      PC Computer - CrossCode - Hit Effects_52: 332256381
+      PC Computer - CrossCode - Hit Effects_53: -1690795997
+      PC Computer - CrossCode - Hit Effects_54: 1271648214
+      PC Computer - CrossCode - Hit Effects_55: 771014410
+      PC Computer - CrossCode - Hit Effects_56: -39007798
+      PC Computer - CrossCode - Hit Effects_57: 1292655726
+      PC Computer - CrossCode - Hit Effects_58: -2078803998
+      PC Computer - CrossCode - Hit Effects_59: -1534589492
+      PC Computer - CrossCode - Hit Effects_6: -1362726735
+      PC Computer - CrossCode - Hit Effects_60: -1596310655
+      PC Computer - CrossCode - Hit Effects_61: -404887176
+      PC Computer - CrossCode - Hit Effects_62: -2042936488
+      PC Computer - CrossCode - Hit Effects_63: 869111048
+      PC Computer - CrossCode - Hit Effects_64: -1784910628
+      PC Computer - CrossCode - Hit Effects_65: -1124844185
+      PC Computer - CrossCode - Hit Effects_66: -1494440740
+      PC Computer - CrossCode - Hit Effects_67: -459317240
+      PC Computer - CrossCode - Hit Effects_68: -1946856438
+      PC Computer - CrossCode - Hit Effects_69: 1377033597
+      PC Computer - CrossCode - Hit Effects_7: -1524348183
+      PC Computer - CrossCode - Hit Effects_70: -814364682
+      PC Computer - CrossCode - Hit Effects_71: 1959846805
+      PC Computer - CrossCode - Hit Effects_72: -480331813
+      PC Computer - CrossCode - Hit Effects_73: 1230768688
+      PC Computer - CrossCode - Hit Effects_74: 881705543
+      PC Computer - CrossCode - Hit Effects_75: 1756488751
+      PC Computer - CrossCode - Hit Effects_76: 1535816556
+      PC Computer - CrossCode - Hit Effects_77: 498531981
+      PC Computer - CrossCode - Hit Effects_78: 2024895265
+      PC Computer - CrossCode - Hit Effects_79: 81122287
+      PC Computer - CrossCode - Hit Effects_8: -610004119
+      PC Computer - CrossCode - Hit Effects_80: -121172929
+      PC Computer - CrossCode - Hit Effects_81: 1764745488
+      PC Computer - CrossCode - Hit Effects_82: -1680633639
+      PC Computer - CrossCode - Hit Effects_83: -1177216544
+      PC Computer - CrossCode - Hit Effects_84: -1022741181
+      PC Computer - CrossCode - Hit Effects_85: 1391648870
+      PC Computer - CrossCode - Hit Effects_86: -1202868334
+      PC Computer - CrossCode - Hit Effects_87: -108945625
+      PC Computer - CrossCode - Hit Effects_88: 1169561097
+      PC Computer - CrossCode - Hit Effects_89: -1609551869
+      PC Computer - CrossCode - Hit Effects_9: 1977731816
+      PC Computer - CrossCode - Hit Effects_90: 343709911
+      PC Computer - CrossCode - Hit Effects_91: -1981285245
+      PC Computer - CrossCode - Hit Effects_92: 2140208078
+      PC Computer - CrossCode - Hit Effects_93: -1089160241
+      PC Computer - CrossCode - Hit Effects_94: -1613946514
+      PC Computer - CrossCode - Hit Effects_95: 2020945239
+      PC Computer - CrossCode - Hit Effects_96: -813104563
+      PC Computer - CrossCode - Hit Effects_97: -710713760
+      PC Computer - CrossCode - Hit Effects_98: -432972862
+      PC Computer - CrossCode - Hit Effects_99: -1010518070
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
