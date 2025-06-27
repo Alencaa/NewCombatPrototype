@@ -385,7 +385,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SmokeFX Lite SpriteSheet 1A-4_0: 7532272870363492236
+      SmokeFX Lite SpriteSheet 1A-4_1: 1716325621308807534
+      SmokeFX Lite SpriteSheet 1A-4_2: 5426787866475439741
+      SmokeFX Lite SpriteSheet 1A-4_3: -1917220441210288750
+      SmokeFX Lite SpriteSheet 1A-4_4: 5069152294483444891
+      SmokeFX Lite SpriteSheet 1A-4_5: 2782683765973479207
+      SmokeFX Lite SpriteSheet 1A-4_6: -2361299019641167144
+      SmokeFX Lite SpriteSheet 1A-4_7: -3131600688413581049
+      SmokeFX Lite SpriteSheet 1A-4_8: 3127810378314577489
+      SmokeFX Lite SpriteSheet 1A-4_9: -3588372330023897395
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
