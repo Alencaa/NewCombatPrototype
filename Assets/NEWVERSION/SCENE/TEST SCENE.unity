@@ -177,8 +177,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1694343731}
   - component: {fileID: 1694343729}
-  - component: {fileID: 1694343733}
   - component: {fileID: 1694343732}
+  - component: {fileID: 1694343735}
+  - component: {fileID: 1694343737}
+  - component: {fileID: 1694343738}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -302,7 +304,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1694343733
+--- !u!95 &1694343735
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694343728}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e73c1dc18f0bd4448a35f633a1841ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &1694343737
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694343728}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1694343738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -314,10 +365,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e4ee189c2bf4c45b452a8b9c19659e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  posture: 50
-  isBlocking: 1
-  blockDirection: {x: 1, y: 0}
+  attackPoint: {fileID: 0}
+  isComboEnemy: 0
+  comboPattern: []
+  player: {fileID: 2037412661}
 --- !u!1 &1812585554
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +554,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeee70e9e4f120b4f90e7d3ead5de866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 100
+  parryWindow: 0.3
+  isInvincible: 0
 --- !u!4 &2037412661
 Transform:
   m_ObjectHideFlags: 0
@@ -578,9 +632,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hittableLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   hitRange: 1.5
-  attackType: 0
+  attackType: 1
   baseDamage: 10
   postureDamage: 5
   comboTracker: {fileID: 2037412665}
