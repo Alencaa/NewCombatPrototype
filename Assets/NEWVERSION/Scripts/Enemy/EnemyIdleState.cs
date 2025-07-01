@@ -1,29 +1,29 @@
-﻿using CombatV2.Enemy;
-using CombatV2.FSM;
+﻿using CombatV2.FSM;
 using UnityEngine;
 
-// 😐 Trạng thái chờ (Idle)
-public class EnemyIdleState : CharacterState<EnemyController>
+namespace CombatV2.Enemy
 {
-    private float waitTime = 1.5f;
-    private float timer;
-
-    public EnemyIdleState(EnemyController owner, StateMachine<EnemyController> stateMachine)
-        : base(owner, stateMachine) { }
-
-    public override void Enter()
+    public class EnemyIdleState : CharacterState<EnemyController>
     {
-        Debug.Log("Enemy: Entering IDLE state");
-        Owner.PlayAnimation("Idle");
-        timer = 0f;
-    }
+        public EnemyIdleState(EnemyController owner, StateMachine<EnemyController> stateMachine)
+            : base(owner, stateMachine) { }
 
-    public override void Update()
-    {
-        timer += Time.deltaTime;
-        if (timer >= waitTime)
+        public override void Enter()
         {
-            stateMachine.ChangeState(new EnemyChaseState(Owner, stateMachine));
+            Owner.animator.Play("Idle");
+        }
+
+        public override void Update()
+        {
+            if (Owner.player != null)
+            {
+                float distance = Vector2.Distance(Owner.transform.position, Owner.player.position);
+
+                if (distance < Owner.config.detectionRange)
+                {
+                    stateMachine.ChangeState(new EnemyChaseState(Owner, stateMachine));
+                }
+            }
         }
     }
 }

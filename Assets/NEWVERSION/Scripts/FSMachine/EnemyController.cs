@@ -1,47 +1,52 @@
 ﻿using CombatV2.FSM;
+using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace CombatV2.Enemy
 {
-    // 🎮 Controller chính cho enemy, điều khiển trạng thái và hành vi AI
+    [RequireComponent(typeof(MovementController), typeof(EnemyCombatHandler), typeof(CharacterAnimator))]
     public class EnemyController : MonoBehaviour
     {
-        public Transform attackPoint; // Điểm va chạm
+        [Header("Combat Settings")]
+        public bool isComboEnemy = false;
+        public EnemyCombatConfig config;
+        public Transform attackPoint;
+        public Transform player;
+        public float currentPosture;
 
-        public bool isComboEnemy = false; // Gán qua Inspector hoặc runtime
-        public List<string> comboPattern; // Optional: để chỉ combo nào đánh
+        // 🔗 Sub-systems
+        public MovementController movement { get; private set; }
+        public EnemyCombatHandler combat { get; private set; }
+        public CharacterAnimator animator { get; private set; }
 
-        [Header("References")]
-        public Transform player; // Reference tới player để AI theo dõi
-
-        private Animator animator;
-        private Rigidbody2D rb;
-
-        // 💡 FSM quản lý các trạng thái của enemy (Idle, Chase, Attack,...)
+        // 🧠 FSM
         private StateMachine<EnemyController> stateMachine;
-
-        // 🧠 Property dùng bởi các state để truy cập controller
         public StateMachine<EnemyController> StateMachine => stateMachine;
+
+        public List<string> comboPattern => config.comboPattern;
+
+        // 📍 State flags
+        public bool isBlocking;
+        public bool isInParryWindow;
 
         private void Awake()
         {
-            animator = GetComponent<Animator>();
-            rb = GetComponent<Rigidbody2D>();
+            animator = GetComponent<CharacterAnimator>();
+            combat = GetComponent<EnemyCombatHandler>();
+            movement = GetComponent<MovementController>();
 
-            // ⚙️ Khởi tạo FSM
             stateMachine = new StateMachine<EnemyController>(this);
         }
 
         private void Start()
         {
-            // 🌟 Bắt đầu với trạng thái Idle
+            currentPosture = config.maxPosture;
             stateMachine.ChangeState(new EnemyIdleState(this, stateMachine));
         }
 
         private void Update()
         {
-            // 🔁 Gọi update của FSM mỗi frame
             stateMachine.Update();
         }
 
@@ -50,20 +55,49 @@ namespace CombatV2.Enemy
             stateMachine.FixedUpdate();
         }
 
-        // 🔄 Hàm hỗ trợ chơi animation theo tên
-        public void PlayAnimation(string animName)
+        public void ResetTimeScale()
         {
-            if (animator != null)
-            {
-                animator.Play(animName);
-            }
+            Time.timeScale = 1f;
         }
 
-        // 🚶 Di chuyển enemy về phía target
-        public void MoveToward(Vector3 target)
+        public void ApplyDamage(float damage, bool isHeavy)
         {
-            Vector2 direction = (target - transform.position).normalized;
-            rb.MovePosition(rb.position + direction * 2f * Time.deltaTime); // tốc độ có thể chỉnh sửa
+            if (isBlocking)
+            {
+                if (isInParryWindow)
+                {
+                    stateMachine.ChangeState(new EnemyParriedState(this, stateMachine));
+                    return;
+                }
+
+                float postureDamage = isHeavy ? damage * config.heavyAttackPostureMultiplier : damage;
+                currentPosture -= postureDamage;
+
+                if (currentPosture <= config.guardBreakThreshold)
+                {
+                    stateMachine.ChangeState(new EnemyStaggerState(this, stateMachine));
+                }
+            }
+            else
+            {
+                stateMachine.ChangeState(new EnemyStaggerState(this, stateMachine));
+            }
         }
+        // 🔁 Chuyển về Idle state bằng coroutine delay
+        public void TransitionToIdle(StateMachine<EnemyController> stateMachine, float delay = 0f)
+        {
+            StartCoroutine(WaitAndDo(delay, () =>
+            {
+                stateMachine.ChangeState(new EnemyIdleState(this, stateMachine));
+            }));
+        }
+
+        // ⏳ Coroutine chờ rồi thực thi
+        public System.Collections.IEnumerator WaitAndDo(float delay, System.Action action)
+        {
+            yield return new WaitForSeconds(delay);
+            action?.Invoke();
+        }
+
     }
 }

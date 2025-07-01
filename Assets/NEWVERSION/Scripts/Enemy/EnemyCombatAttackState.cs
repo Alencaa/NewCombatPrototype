@@ -1,15 +1,21 @@
 ﻿using CombatV2.Enemy;
 using CombatV2.FSM;
 using UnityEngine;
-using UnityEngine.VFX;
 
 /// <summary>
-/// Xử lý tấn công (đánh đơn hoặc combo), đồng thời đánh giá phản ứng từ người chơi.
+/// EnemyCombatAttackState xử lý hành vi tấn công của enemy (đơn hoặc combo),
+/// và đánh giá phản ứng của người chơi (block, parry, dính đòn).
 /// </summary>
 public class EnemyCombatAttackState : CharacterState<EnemyController>
 {
     private int currentStep = 0;
     private float hitTimer = 0f;
+
+    // ⚙️ Tham số cấu hình
+    private float comboInterval => Owner.config.comboInterval;
+    private float blockFeedbackDuration => Owner.config.blockFeedbackDuration;
+    private float timeScaleDuringClash => Owner.config.clashSlowTimeScale;
+
     private bool isCombo => Owner.isComboEnemy;
 
     public EnemyCombatAttackState(EnemyController owner, StateMachine<EnemyController> stateMachine)
@@ -32,15 +38,14 @@ public class EnemyCombatAttackState : CharacterState<EnemyController>
 
         if (!isCombo) return;
 
-        if (hitTimer >= 0.8f)
+        if (hitTimer >= comboInterval)
         {
-            EvaluatePlayerResponse(); // Kiểm tra phản ứng người chơi với từng đòn
-
+            EvaluatePlayerResponse(); // ⚔️ đánh giá phản ứng của người chơi
             currentStep++;
 
             if (currentStep >= Owner.comboPattern.Count)
             {
-                stateMachine.ChangeState(new EnemyIdleState(Owner, stateMachine));
+                Owner.TransitionToIdle(stateMachine); // Dùng hàm coroutine chuyển state
                 return;
             }
 
@@ -48,28 +53,28 @@ public class EnemyCombatAttackState : CharacterState<EnemyController>
         }
     }
 
+    /// <summary>Đòn đánh đơn, không phải combo.</summary>
     private void PlaySingleAttack()
     {
-        Owner.PlayAnimation("Attack1");
+        Owner.animator.Play("Attack1");
 
-        EvaluatePlayerResponse(); // Đòn đơn cũng cần check
+        EvaluatePlayerResponse();
 
-        stateMachine.ChangeState(new EnemyIdleState(Owner, stateMachine), 2f);
+        // Sau đòn đơn → idle
+        Owner.TransitionToIdle(stateMachine, delay: 1.2f); // dùng coroutine cho delay mượt mà
     }
 
+    /// <summary>Phát combo animation tiếp theo.</summary>
     private void PlayComboStep()
     {
         if (currentStep >= Owner.comboPattern.Count) return;
 
-        string anim = Owner.comboPattern[currentStep];
-        Owner.PlayAnimation(anim);
-
+        string animName = Owner.comboPattern[currentStep];
+        Owner.animator.Play(animName);
         hitTimer = 0f;
     }
 
-    /// <summary>
-    /// Kiểm tra xem player có đang parry/block hay không.
-    /// </summary>
+    /// <summary>Đánh giá phản ứng của player: block, parry hay dính đòn.</summary>
     private void EvaluatePlayerResponse()
     {
         if (Owner.player == null) return;
@@ -82,42 +87,32 @@ public class EnemyCombatAttackState : CharacterState<EnemyController>
 
         if (playerController.IsParrying())
         {
-            // Player parry đúng hướng
             stateMachine.ChangeState(new EnemyStaggerState(Owner, stateMachine));
-            Debug.Log("Enemy bị parry!");
+            Debug.Log("🔺 Enemy bị parry!");
             return;
         }
 
         if (playerController.IsBlocking() && Vector2.Dot(attackDir, playerBlockDir) > 0.7f)
         {
             BlockClashFeedback();
-            Debug.Log("Đòn bị block.");
+            Debug.Log("🛡️ Enemy attack bị block.");
             return;
         }
 
-        // Nếu không parry/block → dính đòn
-        playerController.TakeDamage(10); // hoặc tuỳ theo damage mỗi comboStep
-        Debug.Log("Player dính đòn.");
+        // Trúng đòn nếu không block/parry
+        playerController.TakeDamage(10); // sau này có thể lấy từ combo damage config
+        Debug.Log("💥 Player dính đòn.");
     }
 
-    /// <summary>
-    /// Hiệu ứng khi bị block: spark, slow-mo, âm thanh.
-    /// </summary>
+    /// <summary>Gây hiệu ứng khi bị block như slow-motion, VFX,...</summary>
     private void BlockClashFeedback()
     {
-        //if (Owner.attackPoint != null)
-        //{
-        //    VFXManager.Instance?.PlaySparkVFX(Owner.attackPoint.position);
-        //}
+        // VFXManager.Instance?.PlaySparkVFX(Owner.attackPoint.position);
+        // AudioManager.Instance?.Play("Clash");
 
-        //AudioManager.Instance?.Play("Clash");
-        Debug.Log("Block clash effect!");
-        Time.timeScale = 0.05f;
-        Owner.Invoke("ResetTimeScale", 0.08f); // Khôi phục thời gian
-    }
+        Debug.Log("✨ Clash Feedback Triggered");
 
-    public void ResetTimeScale()
-    {
-        Time.timeScale = 1f;
+        Time.timeScale = timeScaleDuringClash;
+        Owner.StartCoroutine(Owner.WaitAndDo(blockFeedbackDuration, Owner.ResetTimeScale));
     }
 }

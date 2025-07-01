@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace CombatV2.FSM
@@ -17,5 +18,16 @@ namespace CombatV2.FSM
         public virtual void Exit() { }
         public virtual void Update() { }
         public virtual void FixedUpdate() { }
+
+        protected void ChangeStateWithDelay(CharacterState<T> newState, float delay)
+        {
+            Owner.StartCoroutine(ChangeStateAfterDelay(newState, delay));
+        }
+
+        private IEnumerator ChangeStateAfterDelay(CharacterState<T> newState, float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            stateMachine.ChangeState(newState);
+        }
     }
 }
