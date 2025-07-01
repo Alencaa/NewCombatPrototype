@@ -367,7 +367,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 0}
   isComboEnemy: 0
-  comboPattern: []
+  comboPattern:
+  - Attack1
+  - Attack2
+  - Attack3
   player: {fileID: 2037412661}
 --- !u!1 &1812585554
 GameObject:

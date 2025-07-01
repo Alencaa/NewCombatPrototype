@@ -50,11 +50,11 @@ public class EnemyCombatAttackState : CharacterState<EnemyController>
 
     private void PlaySingleAttack()
     {
-        Owner.PlayAnimation("Attack_Down");
+        Owner.PlayAnimation("Attack1");
 
         EvaluatePlayerResponse(); // Đòn đơn cũng cần check
 
-        stateMachine.ChangeState(new EnemyIdleState(Owner, stateMachine), 0.7f);
+        stateMachine.ChangeState(new EnemyIdleState(Owner, stateMachine), 2f);
     }
 
     private void PlayComboStep()
@@ -80,7 +80,7 @@ public class EnemyCombatAttackState : CharacterState<EnemyController>
         Vector2 attackDir = (Owner.player.position - Owner.transform.position).normalized;
         Vector2 playerBlockDir = playerController.CurrentBlockDirection;
 
-        if (playerController.IsParrying() && Vector2.Dot(attackDir, playerBlockDir) > 0.7f)
+        if (playerController.IsParrying())
         {
             // Player parry đúng hướng
             stateMachine.ChangeState(new EnemyStaggerState(Owner, stateMachine));
@@ -113,10 +113,10 @@ public class EnemyCombatAttackState : CharacterState<EnemyController>
         //AudioManager.Instance?.Play("Clash");
         Debug.Log("Block clash effect!");
         Time.timeScale = 0.05f;
-        Owner.Invoke(nameof(ResetTimeScale), 0.08f); // Khôi phục thời gian
+        Owner.Invoke("ResetTimeScale", 0.08f); // Khôi phục thời gian
     }
 
-    private void ResetTimeScale()
+    public void ResetTimeScale()
     {
         Time.timeScale = 1f;
     }
