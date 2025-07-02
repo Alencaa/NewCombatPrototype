@@ -20,3 +20,10 @@ MonoBehaviour:
   parryStaggerDuration: 0.5
   attackMoveSpeed: 2
   comboResetTime: 1.5
+  maxComboSteps: 3
+  combos:
+  - comboName: UpwardSpin
+    pattern: 060000000200000004000000
+  - comboName: DownwardSpin
+    pattern: 020000000200000004000000
+  maxComboInterval: 0.4

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
+using DG.Tweening;
 
 public enum GestureType
 {
@@ -40,106 +41,134 @@ public class GestureData
 public class GestureInputHandler : MonoBehaviour
 {
     [Header("Config")]
-    public GestureConfig config;
+    [SerializeField] private GestureConfig config;
+    [SerializeField] private PlayerCombatConfig playerCombatConfig;
 
     [Header("Events")]
     public Action<GestureData> OnGestureRecognized;
+    public Action<List<GestureData>> OnComboRecognized;
 
     private Vector2 mouseDownPos;
     private float mouseDownTime;
-    private bool isRightClickHeld = false;
 
-    private List<GestureData> gestureHistory = new List<GestureData>();
+    private List<GestureData> gestureBuffer = new();
+    private float lastSwipeTime;
 
-    private Vector2? gestureStart = null;
-    private Vector2? gestureEnd = null;
+    private LineRenderer lineRenderer;
+    public Material lineMaterial;
+    public float lineWidth = 0.05f;
 
-    // Gán khi gesture bắt đầu
-   
-    private void Update()
+    void Start()
     {
-        HandleMouseInput();
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.material = lineMaterial;
+        lineRenderer.startWidth = lineWidth;
+        lineRenderer.endWidth = lineWidth;
+        lineRenderer.positionCount = 0;
+        lineRenderer.useWorldSpace = true;
     }
 
-    void HandleMouseInput()
+    void Update()
+    {
+        HandleInputGesture();
+
+        // Nếu buffer bị treo vì swipe quá chậm → reset
+        if (gestureBuffer.Count > 0 && Time.time - lastSwipeTime > playerCombatConfig.maxComboInterval)
+        {
+            gestureBuffer.Clear();
+        }
+    }
+
+    void HandleInputGesture()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            mouseDownPos = Input.mousePosition;
             mouseDownTime = Time.time;
-            StartGesture(mouseDownPos);
+            mouseDownPos = Input.mousePosition;
+
+
         }
+
         if (Input.GetMouseButtonUp(0))
         {
-            InterpretGesture(isRightClick: false);
-            EndGesture(Input.mousePosition);
+            Vector2 mouseUpPos = Input.mousePosition;
+            float duration = Time.time - mouseDownTime;
+            Vector2 dir = mouseUpPos - mouseDownPos;
+
+
+            if (dir.magnitude < config.gestureThreshold) return;
+
+            float speed = dir.magnitude / duration;
+            Vector2 normalized = dir.normalized;
+            GestureType gestureType = DetectDirection(normalized);
+
+            GestureData gesture = new GestureData(gestureType, normalized, speed, mouseDownPos, mouseUpPos, Time.time);
+
+            HandleComboWithImmediateAttack(gesture);
         }
 
         if (Input.GetMouseButtonDown(1))
         {
             mouseDownPos = Input.mousePosition;
             mouseDownTime = Time.time;
-            isRightClickHeld = true;
-            StartGesture(mouseDownPos);
-        }
-        if (Input.GetMouseButtonUp(1))
-        {
-            float holdDuration = Time.time - mouseDownTime;
-            if (holdDuration < config.holdBlockMinDuration)
-            {
-                InterpretGesture(isRightClick: true);
-            }
-            EndGesture(Input.mousePosition);
-            isRightClickHeld = false;
         }
 
-        if (isRightClickHeld)
+        if (Input.GetMouseButtonUp(1))
         {
-            Vector2 offset = (Vector2)Input.mousePosition - mouseDownPos;
-            if (offset.magnitude > config.gestureThreshold)
+            Vector2 mouseUpPos = Input.mousePosition;
+            float holdDuration = Time.time - mouseDownTime;
+
+            if (holdDuration < config.holdBlockMinDuration)
             {
-                TriggerBlock(offset.normalized);
+                InterpretGesture(true, mouseDownPos, mouseUpPos, mouseDownTime);
+            }
+            else
+            {
+                TriggerBlock((mouseUpPos - mouseDownPos).normalized);
             }
         }
     }
 
-    void InterpretGesture(bool isRightClick)
+    void HandleComboWithImmediateAttack(GestureData gesture)
     {
-        Vector2 releasePos = Input.mousePosition;
-        Vector2 dir = releasePos - mouseDownPos;
-        float duration = Time.time - mouseDownTime;
+        float now = Time.time;
+
+        // Reset nếu swipe quá chậm so với trước đó
+        if (gestureBuffer.Count > 0 && now - lastSwipeTime > playerCombatConfig.maxComboInterval)
+        {
+            gestureBuffer.Clear();
+        }
+
+        gestureBuffer.Add(gesture);
+        DrawSwipeLine(gesture.startPoint, gesture.endPoint, gestureBuffer.Count);
+
+        lastSwipeTime = now;
+
+        // TODO insert SFX combo recording
+
+        // 🔥 Gửi attack đơn LẬP TỨC
+        OnGestureRecognized?.Invoke(gesture);
+
+        if (gestureBuffer.Count == playerCombatConfig.maxComboSteps)
+        {
+            OnComboRecognized?.Invoke(new List<GestureData>(gestureBuffer));
+            gestureBuffer.Clear();
+        }
+    }
+
+    void InterpretGesture(bool isRightClick, Vector2 start, Vector2 end, float startTime)
+    {
+        Vector2 dir = end - start;
+        float duration = Time.time - startTime;
 
         if (dir.magnitude < config.gestureThreshold) return;
 
         float speed = dir.magnitude / duration;
         GestureType directionType = DetectDirection(dir.normalized);
-        GestureType finalType = GestureType.SlashRight;
+        GestureType finalType = isRightClick && speed >= config.parrySpeedThreshold ? GestureType.Parry : directionType;
 
-        if (isRightClick && speed >= config.parrySpeedThreshold)
-        {
-            finalType = GestureType.Parry;
-        }
-
-        GestureData data = new GestureData(finalType == GestureType.Parry ? GestureType.Parry : directionType, dir.normalized, speed, mouseDownPos, releasePos, Time.time);
-        HandleComboMemory(data);
+        GestureData data = new GestureData(finalType, dir.normalized, speed, start, end, Time.time);
         OnGestureRecognized?.Invoke(data);
-    }
-
-    void HandleComboMemory(GestureData current)
-    {
-        if (gestureHistory.Count > 0)
-        {
-            Vector2 lastEnd = gestureHistory[gestureHistory.Count - 1].endPoint;
-            if (Vector2.Distance(lastEnd, current.startPoint) < config.comboResetDistance)
-            {
-                // Combo continues
-            }
-            else
-            {
-                gestureHistory.Clear(); // Reset combo
-            }
-        }
-        gestureHistory.Add(current);
     }
 
     void TriggerBlock(Vector2 direction)
@@ -164,58 +193,39 @@ public class GestureInputHandler : MonoBehaviour
         return GestureType.None;
     }
 
-    #region DRAW UI LINES (for debugging)
-
-    void StartGesture(Vector2 pos)
-    {
-        gestureStart = pos;
-        gestureEnd = null;
-    }
-
-    // Gán khi gesture kết thúc
-    void EndGesture(Vector2 pos)
-    {
-        gestureEnd = pos;
-        // ... detect gesture
-        Invoke(nameof(ClearLine), 0.3f); // Auto clear sau 0.3s
-    }
-
     void ClearLine()
     {
-        gestureStart = null;
-        gestureEnd = null;
+        if (lineRenderer != null)
+            lineRenderer.positionCount = 0;
     }
 
-    void OnGUI()
+    void DrawSwipeLine(Vector2 start, Vector2 end, int index)
     {
-        if (gestureStart.HasValue && gestureEnd.HasValue)
-        {
-            Vector2 start = gestureStart.Value;
-            Vector2 end = gestureEnd.Value;
+        GameObject lineObj = new GameObject($"SwipeLine_{index}");
+        lineObj.transform.parent = this.transform;
 
-            // Vẽ line trên UI
-            DrawLine(start, end, Color.red, 2f);
-        }
+        LineRenderer lr = lineObj.AddComponent<LineRenderer>();
+        lr.material = lineMaterial;
+        lr.startWidth = lineWidth;
+        lr.endWidth = lineWidth;
+        lr.positionCount = 2;
+        lr.useWorldSpace = true;
+
+        // Set màu theo chỉ số swipe
+        Color[] debugColors = { Color.red, Color.green, Color.blue, Color.yellow, Color.cyan, Color.magenta, Color.white };
+        Color color = debugColors[index % debugColors.Length];
+        lr.startColor = color;
+        lr.endColor = color;
+
+        Vector3 worldStart = Camera.main.ScreenToWorldPoint(new Vector3(start.x, start.y, 10));
+        Vector3 worldEnd = Camera.main.ScreenToWorldPoint(new Vector3(end.x, end.y, 10));
+
+        lr.SetPosition(0, worldStart);
+        lr.SetPosition(1, worldEnd);
+
+        Destroy(lineObj, 0.4f); // auto destroy after 2 sec
     }
 
-    void DrawLine(Vector2 start, Vector2 end, Color color, float width)
-    {
-        Matrix4x4 matrix = GUI.matrix;
-        Color oldColor = GUI.color;
-
-        Vector2 d = end - start;
-        float angle = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
-        float length = d.magnitude;
-
-        GUI.color = color;
-        GUIUtility.RotateAroundPivot(angle, start);
-        GUI.DrawTexture(new Rect(start.x, start.y, length, width), Texture2D.whiteTexture);
-        GUIUtility.RotateAroundPivot(-angle, start);
-
-        GUI.color = oldColor;
-        GUI.matrix = matrix;
-    }
-
-    #endregion
 }
+
 

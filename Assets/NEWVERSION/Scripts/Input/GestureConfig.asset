@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d526e9a81292d6468bed2399367ac33, type: 3}
   m_Name: GestureConfig
   m_EditorClassIdentifier: 
-  gestureThreshold: 50
+  gestureThreshold: 40
   parrySpeedThreshold: 800
   comboResetDistance: 30
   holdBlockMinDuration: 0.2

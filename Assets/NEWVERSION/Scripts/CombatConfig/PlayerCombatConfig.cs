@@ -1,4 +1,12 @@
+﻿using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
+public class NamedCombo
+{
+    public string comboName;
+    public List<GestureType> pattern;
+}
 
 [CreateAssetMenu(fileName = "PlayerCombatConfig", menuName = "Combat/PlayerConfig")]
 public class PlayerCombatConfig : ScriptableObject
@@ -18,6 +26,11 @@ public class PlayerCombatConfig : ScriptableObject
     [Header("Animation")]
     public float attackMoveSpeed = 2f;
     public float comboResetTime = 1.5f;
+
+    [Header("Combo")]
+    public int maxComboSteps = 3; // Maximum number of combo steps
+    public List<NamedCombo> combos;
+    public float maxComboInterval = 0.5f; // giây giữa swipe
 
     // Add more as needed
 }
