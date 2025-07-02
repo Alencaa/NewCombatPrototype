@@ -1,6 +1,7 @@
 ﻿using CombatV2.Combat;
 using UnityEngine;
 using System.Collections;
+using CombatV2.Player;
 
 namespace CombatV2.FSM.States
 {
@@ -14,26 +15,26 @@ namespace CombatV2.FSM.States
 
             Debug.Log("Entered Attack");
 
-            var combat = Owner.GetComponent<CombatExecutor>();
-            if (combat != null)
-            {
-                combat.ExecuteAttack(); // đồng thời gọi comboTracker.RegisterHit()
-            }
+            //var combat = Owner.GetComponent<CombatExecutor>();
+            //if (combat != null)
+            //{
+            //    combat.ExecuteAttack(); // đồng thời gọi comboTracker.RegisterHit()
+            //}
 
-            // Check combo logic
-            var combo = Owner.GetComponent<ComboTracker>();
-            if (combo != null)
-            {
-                if (combo.IsFinisherReady())
-                {
-                    Debug.Log("Combo max reached → switch to FinisherState");
-                    stateMachine.ChangeState(new FinisherState(Owner, stateMachine));
-                    return;
-                }
-            }
+            //// Check combo logic
+            //var combo = Owner.GetComponent<ComboTracker>();
+            //if (combo != null)
+            //{
+            //    if (combo.IsFinisherReady())
+            //    {
+            //        Debug.Log("Combo max reached → switch to FinisherState");
+            //        stateMachine.ChangeState(new FinisherState(Owner, stateMachine));
+            //        return;
+            //    }
+            //}
 
-            // Nếu không đủ combo, tự động quay về Idle sau 0.5s
-            Owner.StartCoroutine(BackToIdleAfterDelay(0.5f));
+            //// Nếu không đủ combo, tự động quay về Idle sau 0.5s
+            //Owner.StartCoroutine(BackToIdleAfterDelay(0.5f));
         }
         private IEnumerator BackToIdleAfterDelay(float time)
         {

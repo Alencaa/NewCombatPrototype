@@ -1,49 +1,62 @@
 ﻿using UnityEngine;
+using CombatV2.FSM;
 
-namespace CombatV2.Combat
+namespace CombatV2.Player
 {
     public class CombatExecutor : MonoBehaviour
     {
-        public LayerMask hittableLayers;
-        public float hitRange = 1.5f;
+        [SerializeField] private GestureInputHandler gestureInput;
 
-        public HitType attackType = HitType.Normal;
-        public int baseDamage = 10;
-        public float postureDamage = 5f;
-
-        public ComboTracker comboTracker;
-        public void ExecuteAttack()
+        private void OnEnable()
         {
-            Vector2 origin = (Vector2)transform.position + (Vector2)transform.right * 0.5f;
-            Collider2D[] hits = Physics2D.OverlapCircleAll(origin, hitRange, hittableLayers);
+            gestureInput.OnGestureRecognized += HandleGesture;
+        }
 
-            foreach (var hit in hits)
+        private void OnDisable()
+        {
+            gestureInput.OnGestureRecognized -= HandleGesture;
+        }
+
+        void HandleGesture(GestureData gesture)
+        {
+            switch (gesture.type)
             {
-                var target = hit.GetComponent<IAttackable>();
-                if (target != null)
-                {
-                    HitPayload payload = new()
-                    {
-                        attacker = gameObject,
-                        direction = ((Vector2)hit.transform.position - (Vector2)transform.position).normalized,
-                        hitType = attackType,
-                        damage = baseDamage,
-                        postureDamage = postureDamage,
-                        isParryable = true
-                    };
-
-                    target.ReceiveHit(payload);
-                }
+                case GestureType.SlashUp:
+                case GestureType.SlashDown:
+                case GestureType.SlashLeft:
+                case GestureType.SlashRight:
+                case GestureType.SlashUpLeft:
+                case GestureType.SlashUpRight:
+                case GestureType.SlashDownLeft:
+                case GestureType.SlashDownRight:
+                    ExecuteAttack(gesture);
+                    break;
+                case GestureType.Parry:
+                    TryParry(gesture);
+                    break;
+                case GestureType.Block:
+                    HoldBlock(gesture);
+                    break;
             }
-            comboTracker.RegisterHit();
+        }
 
-            if (comboTracker.IsFinisherReady())
-            {
-                //Debug.Log("READY FOR FINISHER!");
-                // chuyển FSM sang FinisherState nếu muốn
-            }
+        void ExecuteAttack(GestureData gesture)
+        {
+            Debug.Log($"Attack executed: {gesture.type}");
+            // play animation, send damage, etc.
+        }
 
-            Debug.DrawLine(origin, origin + (Vector2)transform.right * hitRange, Color.red, 0.5f);
+        void TryParry(GestureData gesture)
+        {
+            Debug.Log($"Parry attempted: {gesture.type} + {gesture.direction}");
+            // activate parry logic
+        }
+
+        void HoldBlock(GestureData gesture)
+        {
+            Debug.Log($"Blocking toward: {gesture.direction}");
+            // set blocking state, block direction, etc.
         }
     }
+
 }

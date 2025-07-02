@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd5812a0608ca44d8e10e8b39ec1571, type: 3}
   m_Name: Enemy_Normal_Config
   m_EditorClassIdentifier: 
-  comboPattern: []
+  comboPattern:
+  - Attack1
+  - Attack2
+  - Attack3
   maxPosture: 100
   guardBreakThreshold: 0
   postureRegenRate: 10
