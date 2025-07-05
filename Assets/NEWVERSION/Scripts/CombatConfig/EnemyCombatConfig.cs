@@ -1,11 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using CombatV2.Combat;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Combat/EnemyCombatConfig")]
 public class EnemyCombatConfig : ScriptableObject
 {
     [Tooltip("Danh sách các animation combo")]
-    public List<string> comboPattern;
+    public List<AttackData> enemyComboData;
+
 
     [Header("Posture & Guard")]
     [Tooltip("Tổng posture của enemy trước khi guard break")]

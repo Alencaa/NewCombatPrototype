@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace CombatV2.Combat
 {
     public interface IAttackable
     {
-        void ReceiveHit(HitPayload payload);
+        void OnHitReceived(AttackData attackData, HitRegionType hitRegion, Vector2 attackerPosition);
     }
 }

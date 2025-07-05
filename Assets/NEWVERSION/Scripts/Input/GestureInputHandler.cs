@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using DG.Tweening;
+using Spine;
 using System;
-using DG.Tweening;
+using System.Collections.Generic;
+using UnityEngine;
 
 public enum GestureType
 {
@@ -47,6 +48,10 @@ public class GestureInputHandler : MonoBehaviour
     [Header("Events")]
     public Action<GestureData> OnGestureRecognized;
     public Action<List<GestureData>> OnComboRecognized;
+    public Action<Vector2> OnBlockDirectionChanged;
+    public Action OnBlockStart;
+    public Action OnBlockEnd;
+    private Vector2 lastBlockDirection = Vector2.zero;
 
     private Vector2 mouseDownPos;
     private float mouseDownTime;
@@ -111,6 +116,40 @@ public class GestureInputHandler : MonoBehaviour
         {
             mouseDownPos = Input.mousePosition;
             mouseDownTime = Time.time;
+            lastBlockDirection = Vector2.zero;
+            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 playerPos = transform.position;
+            Vector2 rawDir = (mouseWorld - (Vector3)playerPos);
+            if (rawDir.magnitude > 0.1f) // không dùng gestureThreshold ở đây
+            {
+                Vector2 normalized = rawDir.normalized;
+                if (lastBlockDirection == Vector2.zero ||
+                                   Vector2.Angle(lastBlockDirection, normalized) > 5f)
+                {
+                    OnBlockDirectionChanged?.Invoke(normalized);
+                    lastBlockDirection = normalized;
+                }
+            }
+            OnBlockStart?.Invoke();
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 playerPos = transform.position;
+
+            Vector2 rawDir = (mouseWorld - (Vector3)playerPos);
+            if (rawDir.magnitude > 0.1f) // không dùng gestureThreshold ở đây
+            {
+                Vector2 normalized = rawDir.normalized;
+
+                if (lastBlockDirection == Vector2.zero ||
+                    Vector2.Angle(lastBlockDirection, normalized) > 5f)
+                {
+                    OnBlockDirectionChanged?.Invoke(normalized);
+                    lastBlockDirection = normalized;
+                }
+            }
         }
 
         if (Input.GetMouseButtonUp(1))
@@ -118,13 +157,14 @@ public class GestureInputHandler : MonoBehaviour
             Vector2 mouseUpPos = Input.mousePosition;
             float holdDuration = Time.time - mouseDownTime;
 
+
             if (holdDuration < config.holdBlockMinDuration)
             {
-                InterpretGesture(true, mouseDownPos, mouseUpPos, mouseDownTime);
+                InterpretGesture(true, mouseDownPos, mouseUpPos, mouseDownTime); // Parry
             }
             else
             {
-                TriggerBlock((mouseUpPos - mouseDownPos).normalized);
+                OnBlockEnd?.Invoke(); // End block state
             }
         }
     }
@@ -173,6 +213,7 @@ public class GestureInputHandler : MonoBehaviour
 
     void TriggerBlock(Vector2 direction)
     {
+
         GestureData blockData = new GestureData(GestureType.Block, direction, 0, mouseDownPos, Input.mousePosition, Time.time);
         OnGestureRecognized?.Invoke(blockData);
     }
@@ -192,7 +233,7 @@ public class GestureInputHandler : MonoBehaviour
 
         return GestureType.None;
     }
-
+   
     void ClearLine()
     {
         if (lineRenderer != null)

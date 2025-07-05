@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using CombatV2.FSM;
 using System.Collections.Generic;
-using CombatV2.FSM;
+using UnityEngine;
+using TMPro;
+using CombatV2.FSM.States;
 
 namespace CombatV2.Player
 {
@@ -8,10 +10,11 @@ namespace CombatV2.Player
     {
         [SerializeField] private GestureInputHandler gestureInput;
         [SerializeField] private PlayerCombatConfig playerCombatConfig;
+        [SerializeField] private PlayerController playerController;
+        [SerializeField] private TextMeshPro debugText;
 
         private Dictionary<string, List<GestureType>> comboLookup;
-
-        private List<GestureData> currentActiveAttacks = new(); // optional: để cancel nếu combo triggered
+        private List<GestureData> currentActiveAttacks = new();
 
         private void Awake()
         {
@@ -24,6 +27,10 @@ namespace CombatV2.Player
 
         private void OnEnable()
         {
+            gestureInput.OnBlockStart += EnterBlockState;
+            gestureInput.OnBlockDirectionChanged += UpdateBlockDirection;
+            gestureInput.OnBlockEnd += ExitBlockState;
+
             gestureInput.OnComboRecognized += HandleCombo;
             gestureInput.OnGestureRecognized += HandleGesture;
         }
@@ -36,28 +43,52 @@ namespace CombatV2.Player
 
         void HandleGesture(GestureData gesture)
         {
-            Debug.Log($"🗡️ Attack executed: {gesture.type}");
-            currentActiveAttacks.Add(gesture);
-            ExecuteAttack(gesture);
+            switch (gesture.type)
+            {
+                case GestureType.Block:
+                    HandleBlock(gesture);
+                    break;
+
+                case GestureType.Parry:
+                    HandleParry(gesture);
+                    break;
+
+                default:
+                    Debug.Log($"🗡️ Attack executed: {gesture.type}");
+                    currentActiveAttacks.Add(gesture);
+                    //gán buffer cho gesture
+                    if (playerController.StateMachine.CurrentState is PlayerAttackState atkState &&  atkState.IsAcceptingBufferedInput == false || playerController.StateMachine.CurrentState is PlayerComboState comboState) // giai đoạn AttackActive
+                    {
+                        Debug.Log("🔄 Gesture buffered during AttackActive.");
+                        playerController.InputBuffer.BufferGesture(gesture);
+                    }
+                    else
+                    {
+                        playerController.RequestAttackState(gesture);
+                    }
+                        break;
+            }
         }
+
+        #region COMBO HANDLING
 
         void HandleCombo(List<GestureData> combo)
         {
             if (MatchCombo(combo, out string comboName))
             {
                 Debug.Log($"🔥 Combo triggered: {comboName}");
-
-                // Optional: Hủy animation đòn đơn trước đó (tuỳ hệ thống animator của bạn)
                 CancelCurrentAttacks();
 
-                ExecuteCombo(comboName, combo);
+                playerController.StateMachine.ChangeState(
+                    new PlayerComboState(playerController, playerController.StateMachine, comboName, combo)
+                );
+
                 // TODO insert SFX combo recording
             }
             else
             {
                 Debug.Log("❌ Combo failed!");
                 // TODO insert SFX combo fail
-                // Không gọi lại attack đơn
             }
         }
 
@@ -89,16 +120,44 @@ namespace CombatV2.Player
             return false;
         }
 
-        void ExecuteCombo(string comboName, List<GestureData> comboSteps)
+        #endregion
+
+        #region BLOCK / PARRY HANDLING
+
+        void HandleBlock(GestureData gesture)
         {
-            Debug.Log($"[EXECUTE COMBO] {comboName} with {comboSteps.Count} steps");
-            // Play combo animation, apply damage pattern, etc.
+            // do nothing – handled by FSM PlayerBlockState
+            Debug.Log("⚠️ Unexpected: HandleBlock() called by gesture?");
         }
 
-        void ExecuteAttack(GestureData gesture)
+        void HandleParry(GestureData gesture)
         {
-            // Play single attack animation, apply hitbox, etc.
+            playerController.LastParryGesture = gesture.type;
+            playerController.StateMachine.ChangeState(
+                new PlayerParryState(playerController, playerController.StateMachine, gesture)
+            );
         }
+
+        void EnterBlockState()
+        {
+            playerController.IsHoldingBlock = true;
+            playerController.StateMachine.ChangeState(
+                new PlayerBlockState(playerController, playerController.StateMachine)
+            );
+        }
+
+        void UpdateBlockDirection(Vector2 dir)
+        {
+            playerController.CurrentBlockDirection = dir;
+
+        }
+
+        void ExitBlockState()
+        {
+            playerController.IsHoldingBlock = false;
+        }
+
+        #endregion
 
         void CancelCurrentAttacks()
         {

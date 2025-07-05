@@ -1,16 +1,10 @@
+﻿using CombatV2.Combat;
 using UnityEngine;
 
 public class EnemyCombatHandler : MonoBehaviour
 {
-    [SerializeField] private GameObject hitbox;
-    public bool IsHitboxOpen => hitbox != null && hitbox.activeSelf;
-
-    public void SetHitboxState(bool isOpen)
-    {
-        if (hitbox != null)
-            hitbox.SetActive(isOpen);
-    }
-
+    [SerializeField] private EnemyAttackHitbox hitbox; // Gắn sẵn trong prefab
+ 
     public void TriggerStaggerFeedback()
     {
         // Add VFX, SFX, animation trigger etc.
@@ -21,9 +15,20 @@ public class EnemyCombatHandler : MonoBehaviour
     {
         Debug.Log("Parry feedback triggered!");
     }
-
-    public void ResetCombatState()
+    public void SpawnHitbox(AttackData data, Transform owner)
     {
-        SetHitboxState(false);
+        if (hitbox != null)
+        {
+            hitbox.Initialize(data, owner);
+        }
+    }
+    public void OnHitReceived(int damage, Vector2 attackerPosition, CounterHitType hitType)
+    {
+        Debug.Log($"💢 Enemy hit! Damage: {damage}, CH Type: {hitType}");
+
+        // TODO:
+        // - Subtract HP
+        // - Trigger stagger / knockdown / stun theo hitType
+        // - Play animation / flash / SFX
     }
 }

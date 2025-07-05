@@ -1,21 +1,19 @@
-﻿using CombatV2.Enemy;
+﻿using CombatV2.Combat;
+using CombatV2.Enemy;
 using CombatV2.FSM;
 using UnityEngine;
+using System.Collections.Generic;
 
-/// <summary>
-/// EnemyCombatAttackState xử lý hành vi tấn công của enemy (đơn hoặc combo),
-/// và đánh giá phản ứng của người chơi (block, parry, dính đòn).
-/// </summary>
 public class EnemyCombatAttackState : CharacterState<EnemyController>
 {
     private int currentStep = 0;
-    private float hitTimer = 0f;
+    private float phaseTimer = 0f;
+    private AttackData currentAttack;
 
-    // ⚙️ Tham số cấu hình
-    private float comboInterval => Owner.config.comboInterval;
-    private float blockFeedbackDuration => Owner.config.blockFeedbackDuration;
-    private float timeScaleDuringClash => Owner.config.clashSlowTimeScale;
+    private enum Phase { WindUp, AttackActive, Recovery }
+    private Phase currentPhase;
 
+    private List<AttackData> comboSteps;
     private bool isCombo => Owner.isComboEnemy;
 
     public EnemyCombatAttackState(EnemyController owner, StateMachine<EnemyController> stateMachine)
@@ -23,96 +21,125 @@ public class EnemyCombatAttackState : CharacterState<EnemyController>
 
     public override void Enter()
     {
-        currentStep = 0;
-        hitTimer = 0f;
+        comboSteps = Owner.config.enemyComboData;
 
-        if (isCombo)
-            PlayComboStep();
-        else
-            PlaySingleAttack();
+        currentStep = 0;
+        BeginStep();
     }
 
     public override void Update()
     {
-        hitTimer += Time.deltaTime;
+        phaseTimer += Time.deltaTime;
 
-        if (!isCombo) return;
-
-        if (hitTimer >= comboInterval)
+        switch (currentPhase)
         {
-            EvaluatePlayerResponse(); // ⚔️ đánh giá phản ứng của người chơi
-            currentStep++;
+            case Phase.WindUp:
+                if (phaseTimer >= currentAttack.windUpTime)
+                {
+                    currentPhase = Phase.AttackActive;
+                    phaseTimer = 0f;
+                    Owner.combat.SpawnHitbox(currentAttack, Owner.transform); 
+                    Owner.IsInWindUp = false; // reset windup state
+                    EvaluatePlayerGesture();
+                    Debug.Log("🔸 Enemy AttackActive");
+                }
+                break;
 
-            if (currentStep >= Owner.comboPattern.Count)
+            case Phase.AttackActive:
+                if (phaseTimer >= currentAttack.activeTime)
+                {
+                    currentPhase = Phase.Recovery;
+                    phaseTimer = 0f;
+                    Debug.Log("🔻 Enemy Recovery");
+                }
+                break;
+
+            case Phase.Recovery:
+                if (phaseTimer >= currentAttack.recoveryTime)
+                {
+                    currentStep++;
+                    if (currentStep >= comboSteps.Count)
+                    {
+                        Owner.TransitionToIdle(stateMachine); // end combo
+                    }
+                    else
+                    {
+                        BeginStep(); // next attack step
+                    }
+                }
+                break;
+        }
+    }
+
+    private void BeginStep()
+    {
+        currentAttack = comboSteps[currentStep];
+        currentPhase = Phase.WindUp;
+        phaseTimer = 0f;
+
+        Owner.IsInWindUp = true;
+        Owner.animator.Play(currentAttack.animationName);
+
+        Debug.Log($"▶ Enemy Attack Step {currentStep} → {currentAttack.attackName}");
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        Owner.IsInWindUp = false;
+    }
+    private void EvaluatePlayerGesture()
+    {
+        var player = Owner.player?.GetComponent<PlayerController>();
+        if (player == null || player.IsInvincible) return;
+
+        var gesture = currentAttack.gestureRequired;
+
+        if (player.IsParrying())
+        {
+            if (player.LastParryGesture == gesture)
             {
-                Owner.TransitionToIdle(stateMachine); // Dùng hàm coroutine chuyển state
+                Debug.Log("⚡ Super Parry!");
+                player.OnSuperParry(currentAttack);
                 return;
             }
-
-            PlayComboStep();
+            else
+            {
+                Debug.Log("⛔ Wrong-direction parry → posture damage");
+                player.OnFailedParry(currentAttack);
+                return;
+            }
         }
-    }
 
-    /// <summary>Đòn đánh đơn, không phải combo.</summary>
-    private void PlaySingleAttack()
-    {
-        Owner.animator.Play("Attack1");
-
-        EvaluatePlayerResponse();
-
-        // Sau đòn đơn → idle
-        Owner.TransitionToIdle(stateMachine, delay: 1.2f); // dùng coroutine cho delay mượt mà
-    }
-
-    /// <summary>Phát combo animation tiếp theo.</summary>
-    private void PlayComboStep()
-    {
-        if (currentStep >= Owner.comboPattern.Count) return;
-
-        string animName = Owner.comboPattern[currentStep];
-        Owner.animator.Play(animName);
-        hitTimer = 0f;
-    }
-
-    /// <summary>Đánh giá phản ứng của player: block, parry hay dính đòn.</summary>
-    private void EvaluatePlayerResponse()
-    {
-        if (Owner.player == null) return;
-
-        var playerController = Owner.player.GetComponent<PlayerController>();
-        if (playerController == null) return;
-
-        Vector2 attackDir = (Owner.player.position - Owner.transform.position).normalized;
-        Vector2 playerBlockDir = playerController.CurrentBlockDirection;
-
-        if (playerController.IsParrying())
+        if (player.IsBlocking())
         {
-            stateMachine.ChangeState(new EnemyStaggerState(Owner, stateMachine));
-            Debug.Log("🔺 Enemy bị parry!");
+            Vector2 expectedDir = GetDirectionFromGesture(currentAttack.gestureRequired);
+            if (Vector2.Dot(player.CurrentBlockDirection.normalized, expectedDir.normalized) > 0.9f)
+            {
+                player.OnBlocked(currentAttack);
+            }
+            else
+            {
+                Debug.Log("💢 Block in wrong direction → hit");
+                player.OnHitReceived(currentAttack, HitRegionType.Body, Owner.transform.position);
+            }
+
             return;
         }
 
-        if (playerController.IsBlocking() && Vector2.Dot(attackDir, playerBlockDir) > 0.7f)
-        {
-            BlockClashFeedback();
-            Debug.Log("🛡️ Enemy attack bị block.");
-            return;
-        }
-
-        // Trúng đòn nếu không block/parry
-        playerController.TakeDamage(10); // sau này có thể lấy từ combo damage config
-        Debug.Log("💥 Player dính đòn.");
+        // Nếu không parry hoặc block gì cả
+        Debug.Log("💀 Hit landed clean");
+        player.OnHitReceived(currentAttack, HitRegionType.Body, Owner.transform.position);
     }
-
-    /// <summary>Gây hiệu ứng khi bị block như slow-motion, VFX,...</summary>
-    private void BlockClashFeedback()
+    private Vector2 GetDirectionFromGesture(GestureType gesture)
     {
-        // VFXManager.Instance?.PlaySparkVFX(Owner.attackPoint.position);
-        // AudioManager.Instance?.Play("Clash");
-
-        Debug.Log("✨ Clash Feedback Triggered");
-
-        Time.timeScale = timeScaleDuringClash;
-        Owner.StartCoroutine(Owner.WaitAndDo(blockFeedbackDuration, Owner.ResetTimeScale));
+        return gesture switch
+        {
+            GestureType.SlashUp => Vector2.up,
+            GestureType.SlashDown => Vector2.down,
+            GestureType.SlashLeft => Vector2.left,
+            GestureType.SlashRight => Vector2.right,
+            _ => Vector2.zero
+        };
     }
 }
