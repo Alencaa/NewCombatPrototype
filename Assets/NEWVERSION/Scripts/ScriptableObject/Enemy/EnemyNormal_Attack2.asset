@@ -15,7 +15,8 @@ MonoBehaviour:
   attackName: Attack2
   gestureRequired: 1
   damage: 10
-  windUpTime: 0.15
+  knockbackForce: 1.2
+  windUpTime: 0.25
   activeTime: 0.2
   recoveryTime: 0.3
   canCancelDuringRecovery: 1
@@ -24,4 +25,4 @@ MonoBehaviour:
   animationName: Attack2
   sfx: {fileID: 0}
   vfxPrefab: {fileID: 0}
-  counterHitType: 3
+  HitType: 2

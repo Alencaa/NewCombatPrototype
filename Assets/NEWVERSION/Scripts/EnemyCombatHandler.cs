@@ -22,7 +22,7 @@ public class EnemyCombatHandler : MonoBehaviour
             hitbox.Initialize(data, owner);
         }
     }
-    public void OnHitReceived(int damage, Vector2 attackerPosition, CounterHitType hitType)
+    public void OnHitReceived(int damage, Vector2 attackerPosition, HitRegionType hitType)
     {
         Debug.Log($"💢 Enemy hit! Damage: {damage}, CH Type: {hitType}");
 

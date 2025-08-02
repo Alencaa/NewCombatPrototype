@@ -49,24 +49,29 @@ namespace CombatV2.Player
                     HandleBlock(gesture);
                     break;
 
-                case GestureType.Parry:
-                    HandleParry(gesture);
-                    break;
-
                 default:
-                    Debug.Log($"🗡️ Attack executed: {gesture.type}");
-                    currentActiveAttacks.Add(gesture);
-                    //gán buffer cho gesture
-                    if (playerController.StateMachine.CurrentState is PlayerAttackState atkState &&  atkState.IsAcceptingBufferedInput == false || playerController.StateMachine.CurrentState is PlayerComboState comboState) // giai đoạn AttackActive
+
+                    if (IsParryGesture(gesture.type))
                     {
-                        Debug.Log("🔄 Gesture buffered during AttackActive.");
-                        playerController.InputBuffer.BufferGesture(gesture);
+                        HandleParry(gesture);
                     }
                     else
                     {
-                        playerController.RequestAttackState(gesture);
+                        Debug.Log($"🗡️ Attack executed: {gesture.type}");
+                        currentActiveAttacks.Add(gesture);
+                        //gán buffer cho gesture
+                        if (playerController.StateMachine.CurrentState is PlayerAttackState atkState && atkState.IsAcceptingBufferedInput == false || playerController.StateMachine.CurrentState is PlayerComboState comboState) // giai đoạn AttackActive
+                        {
+                            Debug.Log("🔄 Gesture buffered during AttackActive.");
+                            playerController.InputBuffer.BufferGesture(gesture);
+                        }
+                        else
+                        {
+                            playerController.RequestAttackState(gesture);
+                        }
                     }
-                        break;
+                    
+                    break;
             }
         }
 
@@ -164,5 +169,8 @@ namespace CombatV2.Player
             currentActiveAttacks.Clear();
             // Optionally trigger animation cancel / reset
         }
+        bool IsParryGesture(GestureType type) =>
+        type == GestureType.ParryLeft || type == GestureType.ParryRight ||
+        type == GestureType.ParryUp || type == GestureType.ParryDown;
     }
 }

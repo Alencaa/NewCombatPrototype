@@ -18,7 +18,9 @@ namespace CombatV2.FSM.States
             string dirName = Owner.GetDirectionName(gesture.direction);
             string anim = $"Parry_{dirName}";
             Owner.Animator.Play(anim);
-            Debug.Log($"▶ FSM Parry → {anim}");
+            Owner.StartParryWindow(Owner.PlayerCombatConfig.parryWindow);
+            Owner.LastParryGesture = gesture.type;
+            Debug.Log($"▶ FSM Parry → {Owner.LastParryGesture}");
             Owner.TextDebug.text = $"Parry: {anim}";
         }
         public override void Update()

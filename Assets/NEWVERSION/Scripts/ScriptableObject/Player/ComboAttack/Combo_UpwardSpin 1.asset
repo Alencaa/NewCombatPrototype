@@ -15,6 +15,7 @@ MonoBehaviour:
   attackName: upward2
   gestureRequired: 0
   damage: 10
+  knockbackForce: 1.2
   windUpTime: 0.15
   activeTime: 0.1
   recoveryTime: 0.3
@@ -24,4 +25,4 @@ MonoBehaviour:
   animationName: 
   sfx: {fileID: 0}
   vfxPrefab: {fileID: 0}
-  counterHitType: 2
+  HitType: 2

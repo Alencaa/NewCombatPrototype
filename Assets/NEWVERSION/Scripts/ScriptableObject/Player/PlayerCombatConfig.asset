@@ -16,7 +16,7 @@ MonoBehaviour:
   postureRegenRate: 5
   lightAttackDamage: 10
   heavyAttackDamage: 20
-  parryWindow: 0.3
+  parryWindow: 0.35
   parryStaggerDuration: 0.5
   staggerHeadDuration: 1
   staggerBodyDuration: 0.6

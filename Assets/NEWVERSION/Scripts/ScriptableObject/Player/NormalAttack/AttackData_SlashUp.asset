@@ -15,6 +15,7 @@ MonoBehaviour:
   attackName: Slash_Up
   gestureRequired: 1
   damage: 10
+  knockbackForce: 1.2
   windUpTime: 0.2
   activeTime: 0.2
   recoveryTime: 0.2
@@ -24,4 +25,4 @@ MonoBehaviour:
   animationName: Slash_Up
   sfx: {fileID: 0}
   vfxPrefab: {fileID: 0}
-  counterHitType: 3
+  HitType: 2

@@ -97,7 +97,7 @@ public class EnemyCombatAttackState : CharacterState<EnemyController>
 
         if (player.IsParrying())
         {
-            if (player.LastParryGesture == gesture)
+            if (player.IsCorrectParryDirection(player.LastParryGesture, currentAttack.gestureRequired))
             {
                 Debug.Log("⚡ Super Parry!");
                 player.OnSuperParry(currentAttack);
@@ -121,7 +121,6 @@ public class EnemyCombatAttackState : CharacterState<EnemyController>
             else
             {
                 Debug.Log("💢 Block in wrong direction → hit");
-                player.OnHitReceived(currentAttack, HitRegionType.Body, Owner.transform.position);
             }
 
             return;
@@ -129,7 +128,7 @@ public class EnemyCombatAttackState : CharacterState<EnemyController>
 
         // Nếu không parry hoặc block gì cả
         Debug.Log("💀 Hit landed clean");
-        player.OnHitReceived(currentAttack, HitRegionType.Body, Owner.transform.position);
+        player.OnHitReceived(currentAttack, currentAttack.HitType, Owner.transform.position);
     }
     private Vector2 GetDirectionFromGesture(GestureType gesture)
     {
@@ -142,4 +141,5 @@ public class EnemyCombatAttackState : CharacterState<EnemyController>
             _ => Vector2.zero
         };
     }
+   
 }

@@ -1,4 +1,5 @@
 ﻿using CombatV2.Combat;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +8,8 @@ public class PlayerAttackHitbox : MonoBehaviour
 {
     private AttackData attackData;
     private Transform owner;
-    private float timer = 0f;
     private bool active = false;
+    private bool resolved = false;
 
     private List<EnemyHurtBox> hurtBoxesHit = new List<EnemyHurtBox>();
 
@@ -16,11 +17,9 @@ public class PlayerAttackHitbox : MonoBehaviour
     {
         attackData = data;
         owner = ownerTransform;
-        timer = 0f;
         active = true;
+        resolved = false;
         hurtBoxesHit.Clear();
-
-        // Set vị trí và kích thước collider
 
         var col = GetComponent<BoxCollider2D>();
         if (col != null)
@@ -30,25 +29,13 @@ public class PlayerAttackHitbox : MonoBehaviour
         }
 
         gameObject.SetActive(true);
+
+        StartCoroutine(AutoDisableIfNoHit(attackData.activeTime));
     }
 
-    public AttackData GetAttackData() => attackData;
-
-    private void Update()
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (!active) return;
-
-        timer += Time.deltaTime;
-        if (timer >= attackData.activeTime)
-        {
-            ResolveHit();
-            DisableHitbox();
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!active) return;
+        if (!active || resolved) return;
 
         if (other.CompareTag("EnemyHurtBox"))
         {
@@ -56,30 +43,48 @@ public class PlayerAttackHitbox : MonoBehaviour
             if (hurtBox != null && !hurtBoxesHit.Contains(hurtBox))
             {
                 hurtBoxesHit.Add(hurtBox);
+
+                // Nếu đây là lần đầu tiên trúng => chờ 1 frame rồi resolve
+                if (hurtBoxesHit.Count == 1)
+                    StartCoroutine(ResolveNextFrame());
             }
         }
     }
 
+    private IEnumerator ResolveNextFrame()
+    {
+        yield return null; // chờ 1 frame để các trigger khác được xử lý
+        ResolveHit();
+        DisableHitbox();
+    }
+
+    private IEnumerator AutoDisableIfNoHit(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        if (!resolved)
+            DisableHitbox();
+    }
+
     private void ResolveHit()
     {
-        if (hurtBoxesHit.Count == 0) return;
+        if (resolved || hurtBoxesHit.Count == 0) return;
+
+        resolved = true;
 
         List<HitRegionType> regions = new List<HitRegionType>();
         foreach (var hb in hurtBoxesHit)
         {
-            regions.Add(hb.Region); // cần expose public HitRegionType Region => hitRegion;
+            regions.Add(hb.Region);
         }
 
         HitRegionType chosenRegion = HitRegionResolver.ResolveHitRegion(regions, attackData.gestureRequired);
-
-        // Gửi đòn duy nhất vào enemy (tạm chọn enemy đầu tiên trong danh sách)
         var damageable = hurtBoxesHit[0].GetComponentInParent<IAttackable>();
         if (damageable != null)
         {
             damageable.OnHitReceived(attackData, chosenRegion, owner.position);
         }
 
-        Debug.Log($"✅ Hit resolved to: {chosenRegion} from {attackData.attackName}");
+        Debug.Log($"✅ Player hit resolved to: {chosenRegion} from {attackData.attackName}");
     }
 
     private void DisableHitbox()

@@ -16,7 +16,7 @@ public enum GestureType
     SlashDownLeft,
     SlashDownRight,
     Block,
-    Parry
+    ParryLeft, ParryRight, ParryUp, ParryDown
 }
 
 public class GestureData
@@ -86,32 +86,13 @@ public class GestureInputHandler : MonoBehaviour
 
     void HandleInputGesture()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            mouseDownTime = Time.time;
-            mouseDownPos = Input.mousePosition;
+        HandleLeftClickInput();
 
+        HandleRightClickInput();
+    }
 
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            Vector2 mouseUpPos = Input.mousePosition;
-            float duration = Time.time - mouseDownTime;
-            Vector2 dir = mouseUpPos - mouseDownPos;
-
-
-            if (dir.magnitude < config.gestureThreshold) return;
-
-            float speed = dir.magnitude / duration;
-            Vector2 normalized = dir.normalized;
-            GestureType gestureType = DetectDirection(normalized);
-
-            GestureData gesture = new GestureData(gestureType, normalized, speed, mouseDownPos, mouseUpPos, Time.time);
-
-            HandleComboWithImmediateAttack(gesture);
-        }
-
+    private void HandleRightClickInput()
+    {
         if (Input.GetMouseButtonDown(1))
         {
             mouseDownPos = Input.mousePosition;
@@ -169,6 +150,36 @@ public class GestureInputHandler : MonoBehaviour
         }
     }
 
+    private void HandleLeftClickInput()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            mouseDownTime = Time.time;
+            mouseDownPos = Input.mousePosition;
+
+
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            Vector2 mouseUpPos = Input.mousePosition;
+            float duration = Time.time - mouseDownTime;
+            Vector2 dir = mouseUpPos - mouseDownPos;
+
+
+            if (dir.magnitude < config.gestureThreshold) return;
+
+            float speed = dir.magnitude / duration;
+            Vector2 normalized = dir.normalized;
+            GestureType gestureType = DetectDirection(normalized);
+
+            GestureData gesture = new GestureData(gestureType, normalized, speed, mouseDownPos, mouseUpPos, Time.time);
+
+            HandleComboWithImmediateAttack(gesture);
+        }
+
+    }
+
     void HandleComboWithImmediateAttack(GestureData gesture)
     {
         float now = Time.time;
@@ -205,7 +216,24 @@ public class GestureInputHandler : MonoBehaviour
 
         float speed = dir.magnitude / duration;
         GestureType directionType = DetectDirection(dir.normalized);
-        GestureType finalType = isRightClick && speed >= config.parrySpeedThreshold ? GestureType.Parry : directionType;
+        GestureType finalType;
+
+        if (isRightClick && speed >= config.parrySpeedThreshold)
+        {
+            // Mapping từ hướng swipe sang parry gesture
+            finalType = directionType switch
+            {
+                GestureType.SlashUp => GestureType.ParryUp,
+                GestureType.SlashDown => GestureType.ParryDown,
+                GestureType.SlashLeft => GestureType.ParryLeft,
+                GestureType.SlashRight => GestureType.ParryRight,
+                _ => GestureType.ParryUp // fallback
+            };
+        }
+        else
+        {
+            finalType = directionType;
+        }
 
         GestureData data = new GestureData(finalType, dir.normalized, speed, start, end, Time.time);
         OnGestureRecognized?.Invoke(data);

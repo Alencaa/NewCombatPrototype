@@ -10,6 +10,7 @@ namespace CombatV2.Combat
         public string attackName;
         public GestureType gestureRequired;
         public int damage = 10;
+        public float knockbackForce = 1.2f; 
 
         [Header("Phases Timing")]
         public float windUpTime = 0.15f;
@@ -27,7 +28,7 @@ namespace CombatV2.Combat
         public GameObject vfxPrefab;
 
         [Header("Combat Reaction")]
-        public CounterHitType counterHitType = CounterHitType.Body;
+        public HitRegionType HitType = HitRegionType.Body;
     }
 
 }

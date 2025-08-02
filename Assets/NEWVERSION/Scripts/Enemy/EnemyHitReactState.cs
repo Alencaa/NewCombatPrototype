@@ -53,9 +53,11 @@ namespace CombatV2.FSM.States
         private void ApplyKnockback()
         {
             Vector2 attackerPos = Owner.lastAttackerPosition;
-            Vector2 dir = (Owner.transform.position - (Vector3)attackerPos).normalized;
-            float force = 1.2f;
-
+            Vector2 dir = new Vector2(
+                  Owner.transform.position.x - attackerPos.x,
+                  0f
+              ).normalized;
+            float force = attackData != null ? attackData.knockbackForce : 1.2f;
             Owner.transform.position += (Vector3)(dir * force);
         }
 

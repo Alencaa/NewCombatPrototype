@@ -86,31 +86,12 @@ public class PlayerController : MonoBehaviour, IAttackable
         isParryActive = false;
         Debug.Log("Parry Window END");
     }
-
-    public void UpdateBlockDirection(Vector2 inputDir)
+    public bool IsCorrectParryDirection(GestureType parryGesture, GestureType attackGesture)
     {
-        if (inputDir != Vector2.zero)
-            CurrentBlockDirection = inputDir.normalized;
-    }
-
-    /// <summary>
-    /// Gọi từ enemy → xử lý mất máu
-    /// </summary>
-    public void TakeDamage(int amount)
-    {
-        if (IsInvincible) return;
-
-        currentHP -= amount;
-        Debug.Log($"Player took {amount} damage. Current HP: {currentHP}");
-
-        if (currentHP <= 0)
-        {
-            Die();
-        }
-        else
-        {
-            PlayHurtFeedback();
-        }
+        return (parryGesture == GestureType.ParryUp && attackGesture == GestureType.SlashDown) ||
+               (parryGesture == GestureType.ParryDown && attackGesture == GestureType.SlashUp) ||
+               (parryGesture == GestureType.ParryLeft && attackGesture == GestureType.SlashRight) ||
+               (parryGesture == GestureType.ParryRight && attackGesture == GestureType.SlashLeft);
     }
 
     private void Die()
